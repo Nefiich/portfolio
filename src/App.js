@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+
+import React from 'react';
 import './App.css';
+
+import ResponsiveMenu from 'react-responsive-navbar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <ResponsiveMenu
+          menuOpenButton={<div><i class="fas fa-bars"></i></div>}
+          menuCloseButton={<div><i class="fas fa-times"></i></div>}
+          changeMenuOn="500px"
+          largeMenuClassName="navbar-desktop"
+          smallMenuClassName="navbar-mobile"
+          menu={
+            <ul className="navbar-container">
+              <li className="navbar-logo">Nefiich</li>
+              <div className="navbar-items">
+              <a href="#"><li className="navbar-item">Home</li></a>
+              <a href="#"><li className="navbar-item">About Me</li></a>
+              <a href="#"><li className="navbar-item" >Experience</li></a>
+              <a href="#"><li className="navbar-item">Portfolio</li></a>
+              <a href="#"><li className="navbar-item">Contact</li></a>
+              </div>
+            </ul>
+          }
+        />
+      </div>
     </div>
   );
 }
