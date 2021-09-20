@@ -265,8 +265,8 @@ ul{
 }
 
 .portfolio-card{
-   width: 400px;
-   height: 300px;
+   width: 512px;
+   height: 288px;
 
    margin-right: 2em;
 
@@ -275,8 +275,8 @@ ul{
    border-radius: 10px;
 }
 .portfolio-card-img{
-  width: 400px;
-  height: 300px;
+  width: 512px;
+  height: 288px;
   position: relative;
   border-radius: 10px;
 }
@@ -285,8 +285,8 @@ ul{
   opacity: 0;
   transition: opacity 1s;
 
-  width: 400px;
-  height: 300px;
+  width: 512px;
+  height: 288px;
 
   background-color: rgba(60, 64, 198, 0.8);
  

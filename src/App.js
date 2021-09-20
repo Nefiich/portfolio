@@ -167,15 +167,16 @@ function App() {
           <h1>Portfolio</h1>
           <div className="portfolio-container">
             <div className="portfolio-cards">
-              <PortfolioCard img="./images/portfolio-img.jpg" title="Rock-Paper-Scisors" demo="" github="https://github.com/Nefiich/rock-paper-scissors"/>
-              <PortfolioCard img="./images/portfolio-img.jpg" title="Ip-Adress-Tracker" demo="" github="https://github.com/Nefiich/ip-address-tracker"/>
+              <PortfolioCard img="./images/rock-paper-scissors.jpg" title="Rock-Paper-Scisors" demo="" github="https://github.com/Nefiich/rock-paper-scissors"/>
+              <PortfolioCard img="./images/ip-location.jpg" title="Ip-Adress-Tracker" demo="" github="https://github.com/Nefiich/ip-address-tracker"/>
             </div>
             <div className="portfolio-cards">
-              <PortfolioCard img="./images/portfolio-img.jpg" title="Countries API" demo="" github="https://github.com/Nefiich/see-countries"/>
-              <PortfolioCard img="./images/portfolio-img.jpg" title="Shortly" demo="" github="https://github.com/Nefiich/url-shortener"/>
+              <PortfolioCard img="./images/countries.jpg" title="Countries API" demo="" github="https://github.com/Nefiich/see-countries"/>
+              <PortfolioCard img="./images/shortly.jpg" title="Shortly" demo="" github="https://github.com/Nefiich/url-shortener"/>
             </div>
             <div className="portfolio-cards">
-              <PortfolioCard img="./images/portfolio-img.jpg" title="Portfolio" demo="" github="https://github.com/Nefiich/portfolio"/>
+            <PortfolioCard img="./images/exploreba.jpg" title="Explore.ba" demo="" github="https://github.com/Nefiich/"/>
+              <PortfolioCard img="./images/portfolio.jpg" title="Portfolio" demo="" github="https://github.com/Nefiich/portfolio"/>
               
             </div>
           </div>
