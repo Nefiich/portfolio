@@ -51,31 +51,50 @@ function ContactCard(props){
   );
 }
 
+//Slow scroll for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
+
 function App() {
   return (
     <div className="App">
       <div className="container">
         <ResponsiveMenu
-          menuOpenButton={<div><i class="fas fa-bars"></i></div>}
-          menuCloseButton={<div><i class="fas fa-times"></i></div>}
+          menuOpenButton={
+          <div className="navbar-mobile">
+            <h5 className="navbar-logo">Nefiich</h5>
+            <i class="fas fa-bars"></i>
+          </div>
+        }
+          menuCloseButton={<div className="navbar-mobile">
+          <h5 className="navbar-logo">Nefiich</h5>
+          <i class="fas fa-times"></i>
+        </div>}
           changeMenuOn="500px"
           largeMenuClassName="navbar-desktop"
           smallMenuClassName="navbar-mobile"
           menu={
             <ul className="navbar-container">
-              <li className="navbar-logo">Nefiich</li>
+              <li className="navbar-logo-desktop">Nefiich</li>
               <div className="navbar-items">
-                <a href="#"><li className="navbar-item">Home</li></a>
-                <a href="#"><li className="navbar-item">About Me</li></a>
-                <a href="#"><li className="navbar-item" >Experience</li></a>
-                <a href="#"><li className="navbar-item">Portfolio</li></a>
-                <a href="#"><li className="navbar-item">Contact</li></a>
+                <a href="#home"><li className="navbar-item">Home</li></a>
+                <a href="#about-me"><li className="navbar-item">About Me</li></a>
+                <a href="#experience"><li className="navbar-item" >Experience</li></a>
+                <a href="#portfolio"><li className="navbar-item">Portfolio</li></a>
+                <a href="#contact"><li className="navbar-item">Contact</li></a>
               </div>
             </ul>
           }
         />
 
-        <div className="header">
+        <div className="header" id="home">
           <div className="header-left">
             <h4>Hello I'm</h4>
             <h1>Emin Nefić</h1>
@@ -96,7 +115,7 @@ function App() {
           </div>
         </div>
 
-        <div className="about-me">
+        <div className="about-me" id="about-me">
           <div className="about-me-right">
             <div className="about-me-img-container">
               <img src="./images/about-me-img.svg" className="about-me-img"/>
@@ -117,7 +136,7 @@ function App() {
           </div>
         </div>
         
-        <div className="what-i-do">
+        <div className="what-i-do" id="what-i-do">
           <h1>What I do</h1>
           <div className="cards-container">
             <WhatIDoCard icon={<i class="fas fa-code what-i-do-icons"></i>} title="Web Development" desc="Web Devlopment is my main thing. I have strong knowladge of front-end development as well as back-end devlopment and deployment."/>
@@ -126,7 +145,7 @@ function App() {
           </div>
         </div>
 
-        <div className="experience">
+        <div className="experience" id="experience">
           <div className="education">
             <h1 className="">Education</h1>
             <div className="experience-cards">
@@ -144,7 +163,7 @@ function App() {
           </div>
         </div>
 
-        <div className="portfolio">
+        <div className="portfolio" id="portfolio">
           <h1>Portfolio</h1>
           <div className="portfolio-container">
             <div className="portfolio-cards">
@@ -162,7 +181,7 @@ function App() {
           </div>
         </div>
 
-        <div className="contact-me">
+        <div className="contact-me" id="contact">
           <h1>Contact Me</h1>
           <div className="contact-cards">
             <ContactCard icon={<i class="fas fa-envelope"></i>} title="Email" info="emin.nefic@gmail.com"/>
