@@ -3,53 +3,10 @@ import React from 'react';
 import './App.css';
 
 import ResponsiveMenu from 'react-responsive-navbar';
-
-function WhatIDoCard(props){
-  return(
-    <div className="card">
-      {props.icon}
-      <h2>{props.title}</h2>
-      <p>{props.desc}</p>
-    </div>
-  );
-}
-
-function ExperienceCard(props){
-  return(
-    <div className="experience-card">
-      <h3>{props.title1} - <span className="school">{props.title2}</span></h3>
-      <span className="year">{props.year}</span>
-      {props.desc}
-    </div>
-  );
-}
-
-function PortfolioCard(props){
-  return(
-    <div className="portfolio-card">
-      <img src={props.img} className="portfolio-card-img"/>
-      <div className="portfolio-card-desc">
-        <h2>{props.title}</h2>
-        <div className="demo-github">
-          <a href={props.demo}><p>Demo</p></a>
-          <a href={props.github}><span>Github</span></a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ContactCard(props){
-  return(
-    <div className="contact-card">
-      <div className="contact-icon">
-        {props.icon}
-      </div>
-      <h2>{props.title}</h2>
-      <h5>{props.info}</h5>
-    </div>
-  );
-}
+import WhatIDoCard from './components/whatidocards';
+import ExperienceCard from './components/experiencecard';
+import PortfolioCard from './components/portfoliocards';
+import ContactCard from './components/contactcard';
 
 //Slow scroll for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -118,7 +75,7 @@ function App() {
         <div className="about-me" id="about-me">
           <div className="about-me-right">
             <div className="about-me-img-container">
-              <img src="./images/about-me-img.svg" className="about-me-img"/>
+              <img src="./images/about-me-img.svg" alt="about me" className="about-me-img"/>
             </div>
           </div>
           <div className="about-me-left">
@@ -139,9 +96,9 @@ function App() {
         <div className="what-i-do" id="what-i-do">
           <h1>What I do</h1>
           <div className="cards-container">
-            <WhatIDoCard icon={<i class="fas fa-code what-i-do-icons"></i>} title="Web Development" desc="Web Devlopment is my main thing. I have strong knowladge of front-end development as well as back-end devlopment and deployment."/>
-            <WhatIDoCard icon={<i class="fas fa-mobile-alt what-i-do-icons"></i>} title="Mobile Development" desc="In love with React Native framework, building and deploying reliable Mobile Apps to the App Store."/>
-            <WhatIDoCard icon={<i class="fas fa-server what-i-do-icons"></i>} title="REST Apis" desc="Developmnet and Deployment of all types of RestAPIs using Node.js and Express framework"/>
+            <WhatIDoCard icon={<i class="fas fa-code what-i-do-icons" alt="code"></i>} title="Web Development" desc="Web Devlopment is my main thing. I have strong knowladge of front-end development as well as back-end devlopment and deployment."/>
+            <WhatIDoCard icon={<i class="fas fa-mobile-alt what-i-do-icons" alt="moble"></i>} title="Mobile Development" desc="In love with React Native framework, building and deploying reliable Mobile Apps to the App Store."/>
+            <WhatIDoCard icon={<i class="fas fa-server what-i-do-icons" alt="rest"></i> } title="REST Apis" desc="Developmnet and Deployment of all types of RestAPIs using Node.js and Express framework"/>
           </div>
         </div>
 
