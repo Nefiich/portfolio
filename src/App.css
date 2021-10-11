@@ -29,6 +29,8 @@ ul{
 }
 
 .navbar-container{
+  padding-left: 0;
+
   display: flex;
   flex-direction: row;
 
@@ -521,4 +523,139 @@ ul{
     margin-left: 0;
     margin-right: 0;
   }
+}
+
+
+
+/* ADMIN */
+
+.main{
+  display: flex;
+  margin-right: 20px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.side-menu{
+  width: 20%;
+  height: 100%;
+
+  cursor: pointer;
+}
+.side-menu-item a{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.side-menu-item a i {
+  margin-right: 10px;
+  font-size: 2rem;
+}
+.side-menu-item a h3{
+  font-size: 1.2rem;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+.projects-text{
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.content{
+  width: 80%;
+}
+
+.content-items{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content-items > div{
+  flex: 25%;
+}
+
+.item-button{
+  padding-left: 40px;
+  padding-right: 150px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background-color: #384855;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  margin: 20px;
+  margin-left: 0;
+
+  cursor: pointer;
+
+}
+.item-button h3{
+  color: #ecf0f1;
+}
+.colored-dot{
+  background-color: #d63643;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.project-text-container{
+  display: flex;
+  flex-direction: row;
+  align-items:  center;
+}
+.project-text-container i{
+  font-size: 1.3rem;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.project-input-container{
+  display: flex;
+  flex-direction: column;
+}
+.project-input-container h3{
+  font-weight: 400;
+}
+
+.project-input{
+  padding-left: 20px;
+  padding-right: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  width: 25vw;
+
+  font-family: 'Exo', sans-serif;
+
+  outline: none;
+
+}
+
+.project-img{
+  width: 512px;
+  height: 288px;
+
+  margin-top: 20px;
+}
+.finish-button{
+  background-color: #3c40c6;
+  padding: 5px 10px;
+  border-radius: 10px;
+
+  width: fit-content;
+  margin-left: auto;
+  cursor: pointer;
+}
+.finish-button h3:hover{
+  color: #d9dbdb
+}
+.finish-button h3{
+  line-height: 0.7rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 400;
 }
