@@ -607,7 +607,12 @@ ul{
   flex-direction: row;
   align-items:  center;
 }
-.project-text-container i{
+.plus-icon{
+  font-size: 1.5rem;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.back-icon{
   font-size: 1.3rem;
   margin-right: 15px;
   cursor: pointer;
