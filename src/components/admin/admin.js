@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
+import Projects from './projects';
+import Project from './project';
+
 function Admin() {
 
     const [data, setData] = useState();
@@ -32,11 +35,13 @@ function Admin() {
             setGithub(git);
             setDemo(demo);
             setBgImage(img);
+        }else{
+            window.location.reload(false)
         }
     }
 
     const editProject = () =>{
-        axios.post(`https://ancient-escarpment-01509.herokuapp.com/api/projects/edit/${id}`, {
+        axios.put(`https://ancient-escarpment-01509.herokuapp.com/api/projects/edit/${id}`, {
             name: name,
             github: github,
             demo: demo,
@@ -48,67 +53,6 @@ function Admin() {
           .catch(function (error) {
             console.log(error);
           });
-    }
-
-    function Projects(props){
-        const content = (
-            <div className="content">
-                <div className="project-text-container">
-                    <h2 className="projects-text" style={{margin: '0'}}>Projects</h2>
-                    <i class="fas fa-plus-circle plus-icon"></i>
-                </div>
-                <div className="content-items">
-
-                    {
-                        loaded ? 
-                        data.map(project =>( 
-                            <div className="item-button" onClick={() => {getProject(true, project.id, project.name, project.github, project.demo, project.img)}}>
-                                <div className="colored-dot"></div>
-                                <h3>{project.name}</h3>
-                            </div>
-                        )) : <h3>Loading</h3>
-                    }
-                </div>
-            </div>
-        )    
-        return(
-            <div style={{width: '100%'}}>
-                {loaded ? content : 'Loading...'}
-            </div>
-        );
-    }
-
-    function Project(props){
-        return(
-            <div className="content">
-                 <div className="project-text-container">
-                    <i class="fas fa-arrow-left back-icon" onClick={() => {getProject(false)}}></i>
-                    <h2 className="projects-text" style={{margin: '0'}}>Portfolio</h2>
-                </div>
-                <div className="project-conteiner">
-                    <div className="project-input-container">
-                        <h3>Project Name</h3>
-                        <input className="project-input" value={name} onChange={(e) => {setName(e.target.value)}}/>
-                    </div>
-                    <div className="project-input-container">
-                        <h3>Gihub link</h3>
-                        <input className="project-input" value={github} onChange={(e) => {setGithub(e.target.value)}}/>
-                    </div>
-                    <div className="project-input-container">
-                        <h3>Demo link</h3>
-                        <input className="project-input" value={demo} onChange={(e) => {setDemo(e.target.value)}}/>
-                    </div>
-                    <div className="project-input-container">
-                        <h3>Image link</h3>
-                        <input className="project-input" value={bgImage} onChange={(e) => {setBgImage(e.target.value)}}/>
-                        <img src="./images/exploreba.jpg" className="project-img" alt="project"/>
-                    </div>
-                </div>
-                <div className="finish-button" onClick={() => {editProject()}}>
-                    <h3>Finish editing</h3>
-                </div>
-            </div>
-        )
     }
 
     return(
@@ -131,7 +75,7 @@ function Admin() {
                         </a>
                     </div>
                 </div>
-                {flag ? Project() : <Projects/>}
+                {flag ? <Project getProject={getProject} name={name} setName={setName} github={github} setGithub={setGithub} demo={demo} setDemo={setDemo} bgImage={bgImage} setBgImage={setBgImage} editProject={editProject}/> : <Projects data={data} getProject={getProject} loaded={loaded}/>}
             </div>
         </div>
     );
