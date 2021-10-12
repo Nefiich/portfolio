@@ -54,6 +54,16 @@ function Admin() {
             console.log(error);
           });
     }
+    const deleteProject = () =>{
+        axios.delete(`https://ancient-escarpment-01509.herokuapp.com/api/projects/remove/${id}`)
+          .then(function (response) {
+            console.log(response);
+            window.location.reload(false)
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    }
 
     return(
         <div>
@@ -75,7 +85,7 @@ function Admin() {
                         </a>
                     </div>
                 </div>
-                {flag ? <Project getProject={getProject} name={name} setName={setName} github={github} setGithub={setGithub} demo={demo} setDemo={setDemo} bgImage={bgImage} setBgImage={setBgImage} editProject={editProject}/> : <Projects data={data} getProject={getProject} loaded={loaded}/>}
+                {flag ? <Project getProject={getProject} name={name} setName={setName} github={github} setGithub={setGithub} demo={demo} setDemo={setDemo} bgImage={bgImage} setBgImage={setBgImage} editProject={editProject} deleteProject={deleteProject}/> : <Projects data={data} getProject={getProject} loaded={loaded}/>}
             </div>
         </div>
     );

@@ -646,13 +646,23 @@ ul{
 
   margin-top: 20px;
 }
+.project-buttons-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  width: 100%;
+}
+.bg-red{
+  background-color: #e74c3c !important;
+  margin-right: 10px;
+}
 .finish-button{
   background-color: #3c40c6;
   padding: 5px 10px;
   border-radius: 10px;
 
   width: fit-content;
-  margin-left: auto;
   cursor: pointer;
 }
 .finish-button h3:hover{
@@ -663,4 +673,30 @@ ul{
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+.input-bg-dark{
+  background-color: #f0f0f0;
+  color: #1e272e;
+
+  border: 0;
+}
+
+.create-button{
+  width: 100%;
+
+  text-transform: uppercase;
+  font-family: 'Exo', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  margin-top: 20px;
+  padding: 10px 0;
+
+  background-color: #384855;
+  color: #f0f0f0;
+
+  border: 0;
+  
+
 }

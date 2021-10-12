@@ -26,9 +26,15 @@ function Project(props){
                     <img src="./images/exploreba.jpg" className="project-img" alt="project"/>
                 </div>
             </div>
-            <div className="finish-button" onClick={() => {props.editProject()}}>
-                <h3>Finish editing</h3>
+            <div className="project-buttons-container">
+                <div className="finish-button bg-red" onClick={() => {props.deleteProject()}}>
+                    <h3>Delete</h3>
+                </div>
+                <div className="finish-button" onClick={() => {props.editProject()}}>
+                    <h3>Finish editing</h3>
+                </div>
             </div>
+            
         </div>
     )
 }
