@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import Cookies from 'universal-cookie';
+import { useHistory } from 'react-router';
 
 import Projects from './projects';
 import Project from './project';
 
 function Admin() {
+
+    const cookies = new Cookies();
 
     const [data, setData] = useState();
     const [loaded, setLoaded] = useState(false);
@@ -18,7 +22,19 @@ function Admin() {
 
     const [flag, setFlag] = useState(false);
 
+    let history = useHistory();
+
     useEffect( () => {
+
+
+        const getCookies = cookies.get('user');
+
+        console.log("cookies : " + JSON.stringify(getCookies))
+        if(getCookies === undefined){
+            console.log("There is nothing!");
+            return history.push("/login")
+        }
+
         axios.get('https://ancient-escarpment-01509.herokuapp.com/api/projects')
         .then(res => {
             setData(res.data)
@@ -82,6 +98,12 @@ function Admin() {
                         <a onClick={() => setFlag(false)}>
                             <i className="fas fa-project-diagram"></i>
                             <h3>Projects</h3>
+                        </a>
+                    </div>
+                    <div className="side-menu-item">
+                        <a onClick={() => {cookies.remove('user'); history.push("/login")}}>
+                            <i class="fas fa-sign-out-alt"></i>
+                            <h3>Logout</h3>
                         </a>
                     </div>
                 </div>

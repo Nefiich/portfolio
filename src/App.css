@@ -700,3 +700,50 @@ ul{
   
 
 }
+
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  align-items: center;
+  justify-content: center;
+}
+.login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-text{
+  font-weight: 300;
+
+}
+.login-input{
+  width: 300px;
+  height: 40px;
+  font-size: 15px;
+
+  background-color: #161c20;
+  outline: none;
+  border: 1px solid #3c40c6;
+  color: white;
+}
+.login-button{
+  width: 300px;
+  height: 40px;
+
+  background-color: #3c40c6;
+  color: white;
+  border: 1px solid #3c40c6;
+
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 5px;
+  
+  margin-top: 20px;
+}
+.login-button:hover{
+  cursor: pointer;
+}
