@@ -23,7 +23,7 @@ function Project(props){
                 <div className="project-input-container">
                     <h3>Image link</h3>
                     <input className="project-input" value={props.bgImage} onChange={(e) => {props.setBgImage(e.target.value)}}/>
-                    <img src="./images/exploreba.jpg" className="project-img" alt="project"/>
+                    <img src={props.bgImage} className="project-img" alt="project"/>
                 </div>
             </div>
             <div className="project-buttons-container">

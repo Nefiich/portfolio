@@ -118,7 +118,7 @@ function Projects(props){
         </div>
     )    
     return(
-        <div style={{width: '100%'}}>
+        <div className="main-content" style={{width: '100%'}}>
             {props.loaded ? content : 'Loading...'}
         </div>
     );
