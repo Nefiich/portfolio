@@ -68,14 +68,13 @@ function Projects(props){
         <div className="content">
             <div className="project-text-container">
                 <h2 className="projects-text" style={{margin: '0'}}>Projects</h2>
-                <i class="fas fa-plus-circle plus-icon" onClick={() => {openModal()}}></i>
+                <i className="fas fa-plus-circle plus-icon" onClick={() => {openModal()}}></i>
             </div>
             <div className="content-items">
-
                 {
                     props.loaded ? 
                     props.data.map(project =>( 
-                        <div className="item-button" onClick={() => {props.getProject(true, project.id, project.name, project.github, project.demo, project.img)}}>
+                        <div className="item-button" key={project.id} onClick={() => {props.getProject(true, project.id, project.name, project.github, project.demo, project.img)}}>
                             <div className="colored-dot"></div>
                             <h3>{project.name}</h3>
                         </div>

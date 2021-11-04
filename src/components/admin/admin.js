@@ -9,6 +9,7 @@ import Project from './project';
 function Admin() {
 
     const cookies = new Cookies();
+    let history = useHistory();
 
     const [data, setData] = useState();
     const [loaded, setLoaded] = useState(false);
@@ -22,14 +23,13 @@ function Admin() {
 
     const [flag, setFlag] = useState(false);
 
-    let history = useHistory();
+    
 
     useEffect( () => {
 
 
         const getCookies = cookies.get('user');
 
-        console.log("cookies : " + JSON.stringify(getCookies))
         if(getCookies === undefined){
             console.log("There is nothing!");
             return history.push("/login")
@@ -39,7 +39,6 @@ function Admin() {
         .then(res => {
             setData(res.data)
             setLoaded(true)
-            console.log(res.data)
         });
     }, []);
 
@@ -95,16 +94,16 @@ function Admin() {
                         </a>
                     </div>
                     <div className="side-menu-item">
-                        <a onClick={() => setFlag(false)}>
+                        <span href="#" onClick={() => setFlag(false)}>
                             <i className="fas fa-project-diagram"></i>
                             <h3>Projects</h3>
-                        </a>
+                        </span>
                     </div>
                     <div className="side-menu-item">
-                        <a onClick={() => {cookies.remove('user'); history.push("/login")}}>
-                            <i class="fas fa-sign-out-alt"></i>
+                        <span href="#" onClick={() => {cookies.remove('user'); history.push("/login")}}>
+                            <i className="fas fa-sign-out-alt"></i>
                             <h3>Logout</h3>
-                        </a>
+                        </span>
                     </div>
                 </div>
                 {flag ? <Project getProject={getProject} name={name} setName={setName} github={github} setGithub={setGithub} demo={demo} setDemo={setDemo} bgImage={bgImage} setBgImage={setBgImage} editProject={editProject} deleteProject={deleteProject}/> : <Projects data={data} getProject={getProject} loaded={loaded}/>}

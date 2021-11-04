@@ -3,7 +3,7 @@ import React from 'react';
 function PortfolioCard(props){
     return(
       <div className="portfolio-card">
-        <img src={props.img} className="portfolio-card-img"/>
+        <img src={props.img} className="portfolio-card-img" alt="portfolio-card"/>
         <div className="portfolio-card-desc">
           <h2>{props.title}</h2>
           <div className="demo-github">

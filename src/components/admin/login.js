@@ -6,23 +6,21 @@ import { useHistory } from 'react-router';
 function Login(){
 
 
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     const cookies = new Cookies();
 
     let history = useHistory();
 
     const buttonLogin = () =>{
-        console.log('username : ' + username + " password " + password)
 
         axios.post('https://ancient-escarpment-01509.herokuapp.com/api/login', {
             username: username,
             password: password
         })
         .then(res => {
-            console.log(res);
-            if(res.data = 200){
+            if(res.status === 200){
                 cookies.set('user', res.data);
                 history.push("/admin")
             }

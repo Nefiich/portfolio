@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import '../App.css';
+import axios from "axios";
+
 
 import NavBar from './navbar';
 import WhatIDoCard from './whatidocards';
@@ -19,6 +21,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 function Main() {
+
+const [projects, setProjects] = useState();
+const [isLoaded, setIsLoaded] = useState(false)
+
+useEffect(() => {
+  console.log("Hi!")
+
+  axios.get('https://ancient-escarpment-01509.herokuapp.com/api/projects')
+  .then(res=>{
+    setProjects(res.data)
+    setIsLoaded(true)
+  })
+  
+}, [])
+
   return (
     <div className="App">
       <div className="container">
@@ -95,19 +112,12 @@ function Main() {
 
         <div className="portfolio" id="portfolio">
           <h1>Portfolio</h1>
-          <div className="portfolio-container">
             <div className="portfolio-cards">
-              <PortfolioCard img="./images/rock-paper-scissors.jpg" title="Rock-Paper-Scisors" demo="" github="https://github.com/Nefiich/rock-paper-scissors"/>
-              <PortfolioCard img="./images/ip-location.jpg" title="Ip-Adress-Tracker" demo="" github="https://github.com/Nefiich/ip-address-tracker"/>
-            </div>
-            <div className="portfolio-cards">
-              <PortfolioCard img="./images/countries.jpg" title="Countries API" demo="" github="https://github.com/Nefiich/see-countries"/>
-              <PortfolioCard img="./images/shortly.jpg" title="Shortly" demo="" github="https://github.com/Nefiich/url-shortener"/>
-            </div>
-            <div className="portfolio-cards">
-            <PortfolioCard img="./images/exploreba.jpg" title="Explore.ba" demo="" github="https://github.com/Nefiich/"/>
-            <PortfolioCard img="./images/portfolio.jpg" title="Portfolio" demo="" github="https://github.com/Nefiich/portfolio"/>
-            </div>
+              {
+                isLoaded ? projects.map(project=>(
+                  <PortfolioCard key={projects.id} img={project.img} title={project.name} demo={project.demo} github={project.github}/>
+                )) : <h2>Loading...</h2>
+              }
           </div>
         </div>
 

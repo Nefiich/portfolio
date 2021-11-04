@@ -252,29 +252,33 @@ ul{
 }
 
 .portfolio-container{
-  margin-top: 3em;
-
-  width: inherit;
-  
 }
 
 .portfolio-cards{
   margin-top: 2em;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 
   justify-content: center;
+
+  margin-top: 3em;
+
+  width: inherit;
+  
 }
 
 .portfolio-card{
-   width: 512px;
-   height: 288px;
 
-   margin-right: 2em;
+  width: 512px;
+  height: 288px;
 
-   position: relative;
+  margin-right: 2em;
+  margin-top: 2em;
 
-   border-radius: 10px;
+  position: relative;
+
+  border-radius: 10px;
 }
 .portfolio-card-img{
   width: 512px;
@@ -480,18 +484,25 @@ ul{
     margin-top: 20px;  
   }
   .portfolio-cards{
+    display: flex;
     flex-direction: column;
+    flex-wrap: wrap !important;
+
     align-items: center;
+
     margin-top: 0;
     margin-right: auto;
     margin-left: auto;
   }
   .portfolio-card{
-    margin-top: 2em;
+    flex: 50%;
+    
     width:350px;
     height: 250px;
+
     margin-right: auto;
     margin-left: auto;
+    margin-top: 2em;
   }
   .portfolio-card-img{
     width: 350px;
@@ -511,6 +522,7 @@ ul{
   }
   .contact-card{
     margin-top: 2em;
+    margin-right: 0;
   }
   .footer{
     flex-direction: column;
@@ -541,6 +553,21 @@ ul{
 
   cursor: pointer;
 }
+.side-menu-item span{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.side-menu-item span i {
+  margin-right: 10px;
+  font-size: 2rem;
+}
+.side-menu-item span h3{
+  font-size: 1.2rem;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
 .side-menu-item a{
   display: flex;
   flex-direction: row;
@@ -555,6 +582,7 @@ ul{
   margin-top: 24px;
   margin-bottom: 20px;
 }
+
 .projects-text{
   font-weight: 300;
   font-size: 2rem;
