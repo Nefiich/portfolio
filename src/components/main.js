@@ -70,7 +70,7 @@ useEffect(() => {
           </div>
           <div className="about-me-left">
             <h1>About me</h1>
-            <p>Hello, I’m a Emin but you can call me Nefich. I'm a web-developer based in Bosnia. I have rich experience in web site design & development. Also I am good at </p>
+            <p>Hello, I’m Emin but you can call me Nefich. I'm a web developer based in Bosnia. I have rich experience in web site design & development. Also, I am good at : </p>
             <div className="skills-container">
               <span className="skill">HTML5</span>
               <span className="skill">CSS</span>
@@ -86,9 +86,9 @@ useEffect(() => {
         <div className="what-i-do" id="what-i-do">
           <h1>What I do</h1>
           <div className="cards-container">
-            <WhatIDoCard icon={<i class="fas fa-code what-i-do-icons" alt="code"></i>} title="Web Development" desc="Web Devlopment is my main thing. I have strong knowladge of front-end development as well as back-end devlopment and deployment."/>
-            <WhatIDoCard icon={<i class="fas fa-mobile-alt what-i-do-icons" alt="moble"></i>} title="Mobile Development" desc="In love with React Native framework, building and deploying reliable Mobile Apps to the App Store."/>
-            <WhatIDoCard icon={<i class="fas fa-server what-i-do-icons" alt="rest"></i> } title="REST Apis" desc="Developmnet and Deployment of all types of RestAPIs using Node.js and Express framework"/>
+            <WhatIDoCard icon={<i class="fas fa-code what-i-do-icons" alt="code"></i>} title="Web Development" desc="Web Development is my main thing. I have a strong knowledge of front-end development as well as back-end development and deployment."/>
+            <WhatIDoCard icon={<i class="fas fa-mobile-alt what-i-do-icons" alt="moble"></i>} title="Mobile Development" desc="In love with React framework, building and deploying reliable Websites as well as Mobile Apps."/>
+            <WhatIDoCard icon={<i class="fas fa-server what-i-do-icons" alt="rest"></i> } title="REST APIs" desc="Development and Deployment of all types of REST APIs using Node.js and Express framework"/>
           </div>
         </div>
 
