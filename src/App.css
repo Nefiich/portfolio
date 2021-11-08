@@ -803,4 +803,24 @@ ul{
   .item-button{
     margin-left: 20px;
   }
+
+  .project-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-input-container{
+    align-items: center;
+  }
+  .project-img{
+    width: 332px;
+    height:auto;
+    padding: 10px;
+  }
+
+  .project-buttons-container{
+    justify-content: center;
+    margin-top: 20px;
+  }
 }
