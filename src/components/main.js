@@ -96,7 +96,7 @@ useEffect(() => {
           <div className="education">
             <h1 className="">Education</h1>
             <div className="experience-cards">
-              <ExperienceCard title1="Information Technologies" title2="Internationa Burch University" year="2021 - 2024" desc={<p>Grade: Freshman <br/>GPA: 0</p>}/>
+              <ExperienceCard title1="Information Technologies" title2="Internationa Burch University" year="2022 - 2024" desc={<><p>Grade: Freshman <br/>GPA: 0</p><br/> <p>(Expected)</p></>}/>
               <ExperienceCard title1="High School" title2="Gimnazija 'Gmnazija Muhsin Rizvić'" year="2017 - 2021" desc={<p>GPA: 3.8 / 4.0</p>}/>
             </div>
           </div>
